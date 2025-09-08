@@ -266,7 +266,7 @@ export default function WebSolution() {
         </div>
       </section>
 
-      <section className="w-full py-28">
+      {/* <section className="w-full py-28">
         <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6">
           <div className=" flex items-center justify-center rounded-md h-60 p-2">
             <Image
@@ -305,7 +305,7 @@ export default function WebSolution() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects Showcase Section */}
       <section className="py-16 px-6 lg:px-20">
