@@ -10,7 +10,6 @@ const navItems = [
   { name: "About Us", link: "/#about" },
   { name: "Products", link: "/#products" },
   { name: "Services", link: "/#services" },
-  { name: "Contact", link: "/#contact" },
 ];
 
 export default function CustomNavbar() {
@@ -28,7 +27,6 @@ export default function CustomNavbar() {
 
   return (
     <>
-      {/* Navbar */}
       <div
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[85%] lg:w-[80%] 
         animate-border p-[2px] transition-all duration-300 
@@ -74,12 +72,13 @@ export default function CustomNavbar() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:block">
-              <button
-                onClick={() => setLoginOpen(true)}
-                className="px-5 py-2 text-sm md:text-base bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:scale-105 hover:shadow-purple-500/30 transition-all"
-              >
-                Get Started
-              </button>
+              <a href="#contact">
+                <button
+                  className="px-5 py-2 text-sm md:text-base bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:scale-105 hover:shadow-purple-500/30 transition-all"
+                >
+                  Contact Us
+                </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}

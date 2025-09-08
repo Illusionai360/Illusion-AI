@@ -124,11 +124,11 @@ export default function Footer() {
             <a href="/#about" className="hover:text-neutral-300 transition-colors">
               About Us
             </a>
-            <a href="/#services" className="hover:text-neutral-300 transition-colors">
-              Services
-            </a>
             <a href="/#products" className="hover:text-neutral-300 transition-colors">
               Products
+            </a>
+            <a href="/#services" className="hover:text-neutral-300 transition-colors">
+              Services
             </a>
             <a href="/#contact" className="hover:text-neutral-300 transition-colors">
               Contact us

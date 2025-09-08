@@ -116,20 +116,6 @@ const projects: Project[] = [
     date: "Jul 2023",
   },
   {
-    title: "Early Fit – Personalized Fitness & Wellness Assistant",
-    description: "Fitness platform with OTP-auth forms, Razorpay payments, real time chat patient, consultant and admin panels",
-    link: "https://early.fit/",
-    image: "/early.png",
-    date: "July 2023",
-  },
-  {
-    title: "AI-Powered Task Management System",
-    description: "Smart task manager with AI-driven features like smart assistant, sentiment analysis and many more... Features include visual analytics and a modern responsive UI.",
-    image: "/task.png",
-    link: "https://github.com/manavlade/Task-Management-App",
-    date: "Present",
-  },
-  {
     title: "Child Rights Platform",
     description: "An innovative platform for children to help learn about their rights through games.",
     image: "/Childrights.jpg",
