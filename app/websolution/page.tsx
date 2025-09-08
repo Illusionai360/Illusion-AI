@@ -285,7 +285,6 @@ export default function WebSolution() {
             <h1 className="text-3xl md:text-4xl font-bold leading-tight bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent mb-4">
               Transforming User Experience with AI Innovation
             </h1>
-
             <p className="text-white mb-6">
               Our AI solutions personalize user interactions, ensuring a seamless
               and engaging experience. With responsive design and intelligent
