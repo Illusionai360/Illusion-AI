@@ -124,6 +124,7 @@ const projects: Project[] = [
   },
 ];
 
+
 export default function WebSolution() {
   const [isExpanded, setIsExpanded] = useState(false);
   const projectsToShow = isExpanded ? projects : projects.slice(0, 6); // Show first 6 projects by default
