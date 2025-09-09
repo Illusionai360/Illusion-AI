@@ -19,20 +19,20 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
+   {
+    title: "Multi-Modal Conversational AI",
+    description: "Conversational AI chatbot with Voice, Text, and Image support. Your personal assistant, buddy, mentor, and companion — all in one AI-powered system.",
+    image: "/multimodal.png",
+    link: "https://multi-modal-frontend.vercel.app/",
+    date: "Present",
+  },
+   {
     title: "AI Companion",
     description: "A Chatbot website  with modern, responsive UI where users can talk to famous people and also create one, by just entering basic details about themm and providing a concise summary about the famous person ",
     image: "/AI.png",
     link: "https://github.com/manavlade/Ai-Companion",
     date: "Present",
-  },
-  {
-    title: "AI-Powered Task Management System",
-    description: "Smart task manager with AI-driven features like smart assistant, sentiment analysis and many more... Features include visual analytics and a modern responsive UI.",
-    image: "/task.png",
-    link: "https://github.com/manavlade/Task-Management-App",
-    date: "Present",
-  },
+  }
 ]
 
 export default function ConversationalAI() {

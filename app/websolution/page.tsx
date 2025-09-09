@@ -35,15 +35,15 @@ const projects: Project[] = [
     date: "April 2, 2025",
     tags: ["Logistics", "Platform", "Full-stack"],
   },
-  {
-    title: "AI-Powered Task Management System",
-    description:
-      "Smart task manager with AI-driven features like smart assistant, sentiment analysis and many more... Features include visual analytics and a modern responsive UI.",
-    image: "/task.png",
-    link: "https://github.com/manavlade/Task-Management-App",
-    date: "Present",
-    tags: ["AI", "Productivity", "Dashboard"],
-  },
+  // {
+  //   title: "AI-Powered Task Management System",
+  //   description:
+  //     "Smart task manager with AI-driven features like smart assistant, sentiment analysis and many more... Features include visual analytics and a modern responsive UI.",
+  //   image: "/task.png",
+  //   link: "https://github.com/manavlade/Task-Management-App",
+  //   date: "Present",
+  //   tags: ["AI", "Productivity", "Dashboard"],
+  // },
   {
     title: "TailTenders - AI-Powered Personal Stylist",
     description:
@@ -53,74 +53,14 @@ const projects: Project[] = [
     date: "Feb 22, 2025",
     tags: ["AI", "Fashion", "E-commerce"],
   },
-  {
-    title: "CodeBuddy - Developer Social Media",
-    description:
-      "Built a full-stack social platform for developers with real-time chat functionality.",
-    link: "https://codebuddy-gamma.vercel.app",
-    image: "/codebuddy.png",
-    date: "Aug 2022",
-    tags: ["Social Media", "Real-time", "Developer Tools"],
-  },
-  {
-    title: "CopyTail",
-    description: "Copy Tail Components.",
-    link: "https://copytail.vercel.app/",
-    image: "/copytail.png",
-    date: "Feb 2023",
-    tags: ["UI Components", "Design System"],
-  },
-  {
-    title: "ShipSnap",
-    description: "Track Your Packages Like Never Before",
-    link: "https://ship-snap-track.vercel.app/",
-    image: "/shipsnap.png",
-    date: "Feb 2023",
-    tags: ["Logistics", "Tracking"],
-  },
+
   {
     title: "Footique",
     description: "Your Virtual FootWear web app.",
     link: "https://footify-commerce-133cddb3-j686.vercel.app/",
     image: "/footique.png",
-    date: "Feb 2023",
+    date: "Feb 2025",
     tags: ["E-commerce", "Fashion"],
-  },
-  {
-    title: "WeatherWear",
-    description:
-      "Our Ultimate Travel Companion and Style Guide, Weather-Based Outfit Suggestion.",
-    link: "https://weatherwear-orcin.vercel.app/",
-    image: "/weatherwear.png",
-    date: "Apr 2023",
-    tags: ["Weather", "Fashion", "Travel"],
-  },
-  {
-    title: "LearnNova",
-    description:
-      "Simplify and enhance web user life through powerful tools tailored for academic and personal development.",
-    link: "https://learnnova-9fgg.vercel.app",
-    image: "/learnnova.png",
-    date: "Jun 2023",
-    tags: ["Education", "Productivity"],
-  },
-  {
-    title: "Thumbnail Board Center",
-    description:
-      "A platform designed to simplify the creation and management of image thumbnails for websites, social media, and other digital content.",
-    link: "https://thumbnail-hub-lemg.vercel.app",
-    image: "/thumbnailboard.png",
-    date: "Jul 2023",
-    tags: ["Media", "Content Creation"],
-  },
-  {
-    title: "Child Rights Platform",
-    description:
-      "An innovative platform for children to help learn about their rights through games.",
-    image: "/Childrights.jpg",
-    link: "https://github.com/manavlade/Child-Rights-Portal",
-    date: "Present",
-    tags: ["Education", "Gamification", "Social Good"],
   },
   {
     title: "Velvet Visions Hotel",
@@ -148,6 +88,78 @@ const projects: Project[] = [
     link: "https://lnkd.in/dWS3GcyU",
     date: "Present",
     tags: ["E-commerce", "AR", "Jewelry", "Virtual Try-on"],
+  },
+  {
+    title: "Astro Mystique -Astrology Consultancy Website",
+    description:
+      "A comprehensive astrology consultancy website offering personalized readings, horoscopes, and astrological insights.",
+    image: "/astro-mystique.png",
+    link: "https://astro-consultancy-ruby.vercel.app/",
+    date: "Present",
+    tags: ["E-commerce", "AR", "Jewelry", "Virtual Try-on"],
+  },
+  {
+    title: "LearnNova",
+    description:
+      "Simplify and enhance web user life through powerful tools tailored for academic and personal development.",
+    link: "https://learnnova-9fgg.vercel.app",
+    image: "/learnnova.png",
+    date: "Jun 2025",
+    tags: ["Education", "Productivity"],
+  },
+  {
+    title: "Thumbnail Board Center",
+    description:
+      "A platform designed to simplify the creation and management of image thumbnails for websites, social media, and other digital content.",
+    link: "https://thumbnail-hub-lemg.vercel.app",
+    image: "/thumbnailboard.png",
+    date: "Jul 2025",
+    tags: ["Media", "Content Creation"],
+  },
+  {
+    title: "CopyTail",
+    description: "Copy Tail Components.",
+    link: "https://copytail.vercel.app/",
+    image: "/copytail.png",
+    date: "Feb 2025",
+    tags: ["UI Components", "Design System"],
+  },
+  {
+    title: "ShipSnap",
+    description: "Track Your Packages Like Never Before",
+    link: "https://ship-snap-track.vercel.app/",
+    image: "/shipsnap.png",
+    date: "Feb 2025",
+    tags: ["Logistics", "Tracking"],
+  },
+  {
+    title: "CodeBuddy - Developer Social Media",
+    description:
+      "Built a full-stack social platform for developers with real-time chat functionality.",
+    link: "https://codebuddy-gamma.vercel.app",
+    image: "/codebuddy.png",
+    date: "Aug 2025",
+    tags: ["Social Media", "Real-time", "Developer Tools"],
+  },
+
+  // {
+  //   title: "Child Rights Platform",
+  //   description:
+  //     "An innovative platform for children to help learn about their rights through games.",
+  //   image: "/Childrights.jpg",
+  //   link: "https://github.com/manavlade/Child-Rights-Portal",
+  //   date: "Present",
+  //   tags: ["Education", "Gamification", "Social Good"],
+  // },
+
+  {
+    title: "WeatherWear",
+    description:
+      "Our Ultimate Travel Companion and Style Guide, Weather-Based Outfit Suggestion.",
+    link: "https://weatherwear-orcin.vercel.app/",
+    image: "/weatherwear.png",
+    date: "Apr 2025",
+    tags: ["Weather", "Fashion", "Travel"],
   },
 ];
 
@@ -270,7 +282,8 @@ export default function WebSolution() {
           </motion.h2>
 
           <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-            Explore our diverse portfolio of web solutions across various industries and technologies.
+            Explore our diverse portfolio of web solutions across various
+            industries and technologies.
           </p>
 
           {/* Filters Section */}
@@ -349,7 +362,9 @@ export default function WebSolution() {
                 exit={{ opacity: 0, height: 0 }}
                 className="mt-4"
               >
-                <h3 className="text-lg font-medium text-gray-300 mb-3">Project Tags</h3>
+                <h3 className="text-lg font-medium text-gray-300 mb-3">
+                  Project Tags
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {allTags.map((tag) => (
                     <button
@@ -370,7 +385,8 @@ export default function WebSolution() {
 
             {/* Results count */}
             <div className="mt-4 text-sm text-gray-400">
-              Showing {projectsToShow.length} of {filteredProjects.length} projects
+              Showing {projectsToShow.length} of {filteredProjects.length}{" "}
+              projects
               {filteredProjects.length !== projects.length &&
                 ` (filtered from ${projects.length} total)`}
             </div>
@@ -448,7 +464,9 @@ export default function WebSolution() {
             </>
           ) : (
             <div className="text-center py-12">
-              <div className="text-gray-400 mb-4">No projects match your filters.</div>
+              <div className="text-gray-400 mb-4">
+                No projects match your filters.
+              </div>
               <button
                 onClick={clearFilters}
                 className="px-4 py-2 bg-gray-700/50 hover:bg-gray-700 text-gray-300 rounded-md transition-colors"

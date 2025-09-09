@@ -39,8 +39,9 @@ export default function CustomNavbar() {
         >
           {/* Top Bar */}
           <div
-            className={`px-4 md:px-6 flex items-center justify-between ${isScrolled ? "py-2" : "py-4"
-              }`}
+            className={`px-4 md:px-6 flex items-center justify-between ${
+              isScrolled ? "py-2" : "py-4"
+            }`}
           >
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
@@ -73,9 +74,7 @@ export default function CustomNavbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:block">
               <a href="#contact">
-                <button
-                  className="px-5 py-2 text-sm md:text-base bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:scale-105 hover:shadow-purple-500/30 transition-all"
-                >
+                <button className="px-5 py-2 text-sm md:text-base bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md hover:scale-105 hover:shadow-purple-500/30 transition-all">
                   Contact Us
                 </button>
               </a>
@@ -83,7 +82,7 @@ export default function CustomNavbar() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-black hover:scale-110 transition-transform"
+              className="lg:hidden text-white hover:scale-110 transition-transform"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={26} /> : <Menu size={26} />}
@@ -92,8 +91,9 @@ export default function CustomNavbar() {
 
           {/* Mobile Dropdown */}
           <div
-            className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[350px]" : "max-h-0"
-              }`}
+            className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+              isOpen ? "max-h-[350px]" : "max-h-0"
+            }`}
           >
             <div className="flex flex-col items-center py-6 gap-6 bg-black/60 backdrop-blur-lg">
               {navItems.map((item) => (
@@ -106,15 +106,12 @@ export default function CustomNavbar() {
                   {item.name}
                 </Link>
               ))}
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setLoginOpen(true);
-                }}
+              <Link
+                href={"#contact"} onClick={() => setIsOpen(false)}
                 className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:scale-105 hover:shadow-purple-500/30 transition-all"
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </div>
