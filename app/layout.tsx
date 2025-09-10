@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";  // ✅ Import Next.js Script
 import logo from "@/assets/illusion ai.jpg";
 
 const inter = Inter({
@@ -9,10 +10,10 @@ const inter = Inter({
   weight: ["700"],
 });
 
-
 export const metadata: Metadata = {
   title: "Illusion AI | Where AI Meets Infinite Wisdom",
-  description: "AI that can read your future, solve your business problems, and teach you the secrets of the universe and help you to research — all in one place.",
+  description:
+    "AI that can read your future, solve your business problems, and teach you the secrets of the universe and help you to research — all in one place.",
 };
 
 export default function RootLayout({
@@ -23,13 +24,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href={'./favicon.ico'} />
+        <link rel="icon" href={"./favicon.ico"} />
       </head>
-      <body
-        className={`${inter.className} antialiased`}
-      >
+      <body className={`${inter.className} antialiased`}>
         <Toaster />
         {children}
+
+        {/* ✅ Chatbase Chatbot Script */}
+        <Script id="chatbase-script" strategy="afterInteractive">
+          {`
+            (function(){
+              if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+                window.chatbase=(...arguments)=>{
+                  if(!window.chatbase.q){window.chatbase.q=[]}
+                  window.chatbase.q.push(arguments)
+                };
+                window.chatbase=new Proxy(window.chatbase,{
+                  get(target,prop){
+                    if(prop==="q"){return target.q}
+                    return(...args)=>target(prop,...args)
+                  }
+                })
+              }
+              const onLoad=function(){
+                const script=document.createElement("script");
+                script.src="https://www.chatbase.co/embed.min.js";
+                script.id="_14eRx0NZbTme7xrzp9E-";
+                script.domain="www.chatbase.co";
+                document.body.appendChild(script);
+              };
+              if(document.readyState==="complete"){onLoad();}
+              else{window.addEventListener("load",onLoad);}
+            })();
+          `}
+        </Script>
       </body>
     </html>
   );
