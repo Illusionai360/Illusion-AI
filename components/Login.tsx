@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 interface LoginDialogProps {
   open: boolean;
@@ -12,10 +14,29 @@ interface LoginDialogProps {
 }
 
 export function LoginDialog({ open, setOpen }: LoginDialogProps) {
-  const handleLogin = (e: React.FormEvent) => {
+
+  const [email, setEmail] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Login submitted");
-  };
+    const response = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, phoneNumber }),
+    })
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setOpen(false);
+      toast.success(result.message);
+    } else {
+      toast.error(result.message);
+    }
+  }
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
@@ -26,7 +47,7 @@ export function LoginDialog({ open, setOpen }: LoginDialogProps) {
           </AlertDialogTitle>
         </AlertDialogHeader>
 
-        <form onSubmit={handleLogin} className="mt-6 space-y-5">
+        <form className="mt-6 space-y-5" onSubmit={handleLogin}>
           <div className="grid gap-2">
             <Label htmlFor="email" className="text-black">
               Email
@@ -36,19 +57,21 @@ export function LoginDialog({ open, setOpen }: LoginDialogProps) {
               type="email"
               placeholder="you@example.com"
               className=""
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="password" className="text-black">
-              Password
+            <Label htmlFor="phonenumber" className="text-black">
+              Phone Number
             </Label>
             <Input
-              id="password"
-              type="password"
-              placeholder="••••••••"
+              id="phonenumber"
+              type="number"
+              placeholder="0123456789"
               className=""
+              onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
           </div>

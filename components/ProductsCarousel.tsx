@@ -3,21 +3,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BackgroundBeams } from "./ui/background-beams";
+import { useRouter } from "next/navigation";
 
 const ProductsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check screen size on mount and resize
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -30,6 +30,7 @@ const ProductsCarousel = () => {
       cta: "Try Me",
       color: "from-blue-600 to-indigo-600",
       image: "/astro.jpg",
+      link: "/login"
     },
     {
       title: "Mind Neuro AI",
@@ -39,6 +40,7 @@ const ProductsCarousel = () => {
       cta: "Try Me",
       color: "from-green-600 to-teal-600",
       image: "/mindneuro.jpg",
+      link: "/login"
     },
     {
       title: "Divine Script AI",
@@ -48,6 +50,7 @@ const ProductsCarousel = () => {
       cta: "Try Me",
       color: "from-amber-600 to-orange-600",
       image: "/divine.jpg",
+      link: "/login"
     },
     {
       title: "Cosmos AI",
@@ -57,10 +60,10 @@ const ProductsCarousel = () => {
       cta: "Try Me",
       color: "from-indigo-600 to-purple-600",
       image: "/cosmos.jpg",
+      link: "/login"
     },
   ];
 
-  // Auto-play
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection(1);
@@ -72,10 +75,12 @@ const ProductsCarousel = () => {
   }, [products.length]);
 
   const navigateTo = (newIndex: number) => {
+
     if (newIndex > currentIndex) setDirection(1);
     else setDirection(-1);
     setCurrentIndex(newIndex);
   };
+
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -91,17 +96,17 @@ const ProductsCarousel = () => {
     }),
   };
 
+  const router = useRouter();
+
   return (
     <div
       id="products"
       className="relative w-full min-h-screen bg-black text-white py-10 md:py-20 overflow-hidden"
     >
-      {/* Background beams + glow */}
       <BackgroundBeams className="absolute inset-0 z-0" />
       <div className="absolute top-20 left-4 md:left-10 w-48 h-48 md:w-72 md:h-72 bg-purple-700 opacity-20 blur-3xl rounded-full" />
       <div className="absolute bottom-20 right-4 md:right-10 w-48 h-48 md:w-72 md:h-72 bg-blue-700 opacity-20 blur-3xl rounded-full" />
 
-      {/* Content */}
       <div className="relative w-[95%] md:w-[90%] mx-auto z-10">
         <div className="items-center justify-center">
           <div className="text-center mb-8 md:mb-12 px-2">
@@ -114,12 +119,10 @@ const ProductsCarousel = () => {
             </p>
           </div>
 
-          {/* Carousel - Added min-height for mobile and overflow handling */}
           <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-gradient-to-br from-neutral-950 via-black to-neutral-950 border border-gray-800 shadow-xl md:shadow-2xl min-h-[580px] md:h-96">
 
-            {/* Slide */}
             <div className="relative h-full">
-               <BackgroundBeams className="absolute inset-0 z-0" />
+              <BackgroundBeams className="absolute inset-0 z-0" />
               <AnimatePresence custom={direction} initial={false}>
                 <motion.div
                   key={currentIndex}
@@ -135,7 +138,6 @@ const ProductsCarousel = () => {
                   }}
                   className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-4 sm:p-6 md:p-8"
                 >
-                  {/* Info - Added padding bottom for mobile to prevent overlap with indicators */}
                   <div className="flex-1 w-full space-y-4 md:space-y-6 z-10 pb-12 md:pb-0">
                     <div>
                       <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-white mb-2">
@@ -150,13 +152,13 @@ const ProductsCarousel = () => {
                     </p>
 
                     <button
+                      onClick={() => router.push(products[currentIndex].link)}
                       className={`px-5 py-2.5 md:px-6 md:py-3 rounded-lg bg-gradient-to-r ${products[currentIndex].color} text-white font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg text-sm sm:text-base`}
                     >
                       {products[currentIndex].cta}
                     </button>
                   </div>
 
-                  {/* Visual with image - Adjusted sizing and margins for mobile */}
                   <div className="flex-1 flex items-center justify-center relative mt-4 md:mt-0 w-full md:w-auto">
                     <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl border border-gray-700">
                       <img
@@ -170,7 +172,6 @@ const ProductsCarousel = () => {
               </AnimatePresence>
             </div>
 
-            {/* Indicators - Moved slightly higher on mobile */}
             <div className="absolute bottom-6 md:bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
               {products.map((_, index) => (
                 <button

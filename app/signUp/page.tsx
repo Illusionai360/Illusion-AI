@@ -1,7 +1,9 @@
+import SignUpForm from "@/components/SignUpForm";
+
 export default function SignUppage() {
     return (
         <div>
-            <h1>Sign Up</h1>
+           <SignUpForm/>
         </div>
     )
 }

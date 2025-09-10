@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import Script from "next/script";  // ✅ Import Next.js Script
+import Script from "next/script";  
 import logo from "@/assets/illusion ai.jpg";
 
 const inter = Inter({
@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Illusion AI | Where AI Meets Infinite Wisdom",
   description:
-    "AI that can read your future, solve your business problems, and teach you the secrets of the universe and help you to research — all in one place.",
+    "AI that can read your future, solve your business problems, and teach you the secrets of the universe and help you to research — all in one place. Illusion AI",
 };
 
 export default function RootLayout({
@@ -29,8 +29,6 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Toaster />
         {children}
-
-        {/* ✅ Chatbase Chatbot Script */}
         <Script id="chatbase-script" strategy="afterInteractive">
           {`
             (function(){
