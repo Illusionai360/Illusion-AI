@@ -175,7 +175,6 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
         if (!token) {
             return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
         }
-
         const decoded = verifyJwt(token);
         if (!decoded) {
             return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
