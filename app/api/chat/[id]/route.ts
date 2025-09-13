@@ -184,7 +184,6 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
         if (!newTitle || typeof newTitle !== "string") {
             return NextResponse.json({ message: "Invalid title" }, { status: 400 });
         }
-
         const chatId = params.id;
 
         const chat = await Chat.findOne({ _id: chatId, createdby: decoded.userId });
